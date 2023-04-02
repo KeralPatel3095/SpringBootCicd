@@ -9,7 +9,7 @@ pipeline {
         stage('Build Maven'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/KeralPatel3095/SpringBootCicd.git']]])
-                bat 'mvn clean install'
+                bat 'mvn -X clean install'
             }
         }
         
